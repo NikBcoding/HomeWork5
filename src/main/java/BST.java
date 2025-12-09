@@ -277,4 +277,53 @@ public class BST<E> implements Tree<E> {
         root = null;
         size = 0;
     }
+    // Task 6 - Tree Height(Recursive)
+    public int height() {
+        return height(root);
+    }
+    private int height(TreeNode<E> node) {
+        if (node == null) {
+            return -1;
+            }
+        return 1 + Math.max(height(node.left), height(node.right));
+        }
+
+
+    // Task 7 - Count Leaves
+    public int countLeaves() {
+        return countLeaves(root);
+    }
+    private int countLeaves(TreeNode<E> node) {
+        if (node == null) {
+            return 0;
+        }
+        if (node.left == null && node.right == null) {
+            return 1;
+        }
+        return countLeaves(node.left) + countLeaves(node.right);
+        }
+
+    // Task 8 - Minimum and Maximum
+    public E min() {
+        if (root == null) {
+            return null;
+        }
+        TreeNode<E> current = root;
+        while (current.left != null) {
+            current = current.left;
+        }
+        return current.element;
+    }
+    public E max() {
+        if (root == null) {
+            return null;
+        }
+        TreeNode<E> current = root;
+        while (current.right != null) {
+            current = current.right;
+        }
+        return current.element;
+    }
+
+    // Task 9 - Convert Tree to Sorted List
 }

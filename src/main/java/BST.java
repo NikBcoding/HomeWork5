@@ -22,7 +22,7 @@ public class BST<E> implements Tree<E> {
             add(objects[i]);
     }
 
-    @Override /** Returns true if the element is in the tree */
+    @Override /* Returns true if the element is in the tree */
     public boolean search(E e) {
         TreeNode<E> current = root; // Start from the root
 
@@ -40,7 +40,7 @@ public class BST<E> implements Tree<E> {
         return false;
     }
 
-    @Override /** Insert element e into the binary tree
+    @Override /* Insert element e into the binary tree
      * Return true if the element is inserted successfully */
     public boolean insert(E e) {
         if (root == null)
@@ -76,7 +76,7 @@ public class BST<E> implements Tree<E> {
         return new TreeNode<>(e);
     }
 
-    @Override /** Inorder traversal from the root */
+    @Override /* Inorder traversal from the root */
     public void inorder() {
         inorder(root);
     }
@@ -89,7 +89,7 @@ public class BST<E> implements Tree<E> {
         inorder(root.right);
     }
 
-    @Override /** Postorder traversal from the root */
+    @Override /* Postorder traversal from the root */
     public void postorder() {
         postorder(root);
     }
@@ -102,7 +102,7 @@ public class BST<E> implements Tree<E> {
         System.out.print(root.element + " ");
     }
 
-    @Override /** Preorder traversal from the root */
+    @Override /* Preorder traversal from the root */
     public void preorder() {
         preorder(root);
     }
@@ -127,7 +127,7 @@ public class BST<E> implements Tree<E> {
         }
     }
 
-    @Override /** Get the number of nodes in the tree */
+    @Override /* Get the number of nodes in the tree */
     public int getSize() {
         return size;
     }
@@ -158,7 +158,7 @@ public class BST<E> implements Tree<E> {
         return list; // Return an array list of nodes
     }
 
-    @Override /** Delete an element from the binary tree.
+    @Override /* Delete an element from the binary tree.
      * Return true if the element is deleted successfully
      * Return false if the element is not in the tree */
     public boolean delete(E e) {
@@ -221,7 +221,7 @@ public class BST<E> implements Tree<E> {
         return true; // Element deleted successfully
     }
 
-    @Override /** Obtain an iterator. Use inorder. */
+    @Override /* Obtain an iterator. Use inorder. */
     public java.util.Iterator<E> iterator() {
         return new InorderIterator();
     }
@@ -250,7 +250,7 @@ public class BST<E> implements Tree<E> {
             inorder(root.right);
         }
 
-        @Override /** More elements for traversing? */
+        @Override /* More elements for traversing? */
         public boolean hasNext() {
             if (current < list.size())
                 return true;
@@ -258,7 +258,7 @@ public class BST<E> implements Tree<E> {
             return false;
         }
 
-        @Override /** Get the current element and move to the next */
+        @Override /* Get the current element and move to the next */
         public E next() {
             return list.get(current++);
         }
@@ -274,7 +274,7 @@ public class BST<E> implements Tree<E> {
         }
     }
 
-    @Override /** Remove all elements from the tree */
+    @Override /* Remove all elements from the tree */
     public void clear() {
         root = null;
         size = 0;

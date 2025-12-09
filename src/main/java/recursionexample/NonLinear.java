@@ -15,7 +15,7 @@ public class NonLinear {
 	 * Static main method tests the fibonacci method.
 	 */
 	public static void main(String[] args) {
-		// Declar local variable.
+		// Declare local variable.
 		double d;
 		// Check first input argument and assign it.
 		if (args.length > 0) {

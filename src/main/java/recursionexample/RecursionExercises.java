@@ -61,7 +61,16 @@ public class RecursionExercises {
         if (index == data.length) {
             return 0;
         }
-        return data[index] + sumArrayFromIndex(data, index - 1);
+        return data[index] + sumArrayFromIndex(data, index + 1);
+    }
+
+    // --- Test Task 4: sumArray ---
+    public static void main(String[] args) {
+        int[] data = {1, 2, 3, 4, 5};
+        System.out.println("Sum should be 15 " + sumArray(data));
+
+        int[] data2 = {};
+        System.out.println("Sum should be 0 " + sumArray(data2));
     }
 
     // Task 5: recursive string reverse
@@ -69,9 +78,10 @@ public class RecursionExercises {
         if (s == null) {
             return null;
         }
-        if (s.length() <= 1){
+        if (s.length() <= 1) {
             return s;
         }
         return reverse(s.substring(1)) + s.charAt(0);
     }
+
 }

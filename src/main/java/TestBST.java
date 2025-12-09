@@ -10,6 +10,8 @@ public class TestBST {
         tree.insert("Purple"); // Insert Purple to the tree
         tree.insert("Danube");
 
+        tree.insert("Pink");
+
         // Traverse tree
         System.out.print("Inorder (sorted): ");
         tree.inorder();

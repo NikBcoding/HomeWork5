@@ -1,3 +1,5 @@
+import java.util.List;
+
 public class BST<E> implements Tree<E> {
     protected TreeNode<E> root;
     protected int size = 0;
@@ -326,4 +328,40 @@ public class BST<E> implements Tree<E> {
     }
 
     // Task 9 - Convert Tree to Sorted List
+    public java.util.List<E> toSortedList() {
+        java.util.List<E> result = new java.util.ArrayList<>();
+        toSortedList(root, result);
+        return result;
+    }
+
+    private void toSortedList(TreeNode<E> node, java.util.List<E> result) {
+        if(node == null) {
+            return;
+        }
+        toSortedList(node.left, result);
+        result.add(node.element);
+        toSortedList(node.right, result);
+    }
+
+    // Task 10 - Check if Tree is Height-Balanced
+    public boolean isBalanced() {
+        return heightOrUnbalanced(root) !=-2;
+    }
+    private int heightOrUnbalanced(TreeNode<E> node) {
+        if(node == null) {
+            return -1;
+        }
+        int left =  heightOrUnbalanced(node.left);
+        if(left == -2) {
+            return -2;
+        }
+        int right = heightOrUnbalanced(node.right);
+        if(right == -2) {
+            return -2;
+        }
+        if(Math.abs(left - right) > 1) {
+            return -2;
+        }
+        return 1 + Math.max(left, right);
+    }
 }

@@ -42,7 +42,7 @@ public class RecursionExercises {
         if (n == 1) {
             return 1;
         }
-        return fibonacciRecursive(n - 1) + fibonacciRecursive(n - 2);
+        return  fibonacciRecursive(n-1) + fibonacciRecursive(n-2);
     }
 
     // Task 4: recursive sum of an array (use the helper below)
@@ -53,11 +53,11 @@ public class RecursionExercises {
         if (data.length == 0) {
             return 0;
         }
-        return sumArrayFromIndex(data, 0);
+        return sumArrayFromIndex(data, 0);  // recursion happens at index 0, incrementing by 1
     }
 
     // Helper for Task 4
-    private static long sumArrayFromIndex(int[] data, int index) {
+    private static long sumArrayFromIndex(int[] data, int index ) {
         if (index == data.length) {
             return 0;
         }
@@ -67,11 +67,21 @@ public class RecursionExercises {
     // --- Test Task 4: sumArray ---
     public static void main(String[] args) {
         int[] data = {1, 2, 3, 4, 5};
-        System.out.println("Sum should be 15 " + sumArray(data));
+        System.out.println("Sum should be 15.  After  calculation, we got "  + sumArray(data));
 
         int[] data2 = {};
-        System.out.println("Sum should be 0 " + sumArray(data2));
+        System.out.println("Sum should be 0.  After  calculation, we got " + sumArray(data2));
+
+        // visual of what to expect in the print
+        System.out.println("Fibonacci(0) = " + fibonacciRecursive(0));
+        System.out.println("Fibonacci(1) = " + fibonacciRecursive(1));
+        System.out.println("Fibonacci(5) = " + fibonacciRecursive(5));
+        System.out.println("Fibonacci(8) = " + fibonacciRecursive(8));
+        System.out.println("Fibonacci(12) = " + fibonacciRecursive(12));
+        System.out.println("Fibonacci(15) = " + fibonacciRecursive(15));
+        System.out.println("Fibonacci(20) = " + fibonacciRecursive(20));
     }
+
 
     // Task 5: recursive string reverse
     public static String reverse(String s) {
